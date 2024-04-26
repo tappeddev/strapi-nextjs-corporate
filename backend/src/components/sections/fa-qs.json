@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_sections_fa_qs",
+  "info": {
+    "displayName": "Faqs",
+    "icon": "crown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "faq": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.faq",
+      "required": true
+    },
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

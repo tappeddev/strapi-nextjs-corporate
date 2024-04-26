@@ -1,5 +1,18 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ElementsFaq extends Schema.Component {
+  collectionName: 'components_sections_faqs';
+  info: {
+    displayName: 'Faq entry';
+    icon: 'search';
+    description: '';
+  };
+  attributes: {
+    question: Attribute.String & Attribute.Required;
+    answer: Attribute.Blocks & Attribute.Required;
+  };
+}
+
 export interface ElementsFeatureColumn extends Schema.Component {
   collectionName: 'components_slices_feature_columns';
   info: {
@@ -262,6 +275,20 @@ export interface SectionsBottomActions extends Schema.Component {
   };
 }
 
+export interface SectionsFaQs extends Schema.Component {
+  collectionName: 'components_sections_fa_qs';
+  info: {
+    displayName: 'Faqs';
+    icon: 'crown';
+    description: '';
+  };
+  attributes: {
+    faq: Attribute.Component<'elements.faq', true> & Attribute.Required;
+    heading: Attribute.String & Attribute.Required;
+    description: Attribute.String;
+  };
+}
+
 export interface SectionsFeatureColumnsGroup extends Schema.Component {
   collectionName: 'components_slices_feature_columns_groups';
   info: {
@@ -477,6 +504,7 @@ export interface SharedVideoEmbed extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'elements.faq': ElementsFaq;
       'elements.feature-column': ElementsFeatureColumn;
       'elements.feature-row': ElementsFeatureRow;
       'elements.feature': ElementsFeature;
@@ -494,6 +522,7 @@ declare module '@strapi/types' {
       'links.social-link': LinksSocialLink;
       'meta.metadata': MetaMetadata;
       'sections.bottom-actions': SectionsBottomActions;
+      'sections.fa-qs': SectionsFaQs;
       'sections.feature-columns-group': SectionsFeatureColumnsGroup;
       'sections.feature-rows-group': SectionsFeatureRowsGroup;
       'sections.features': SectionsFeatures;
