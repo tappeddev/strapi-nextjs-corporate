@@ -13,13 +13,11 @@ const populate = {
       buttons: {
         populate: true,
       },
-      faqs: {
-        populate: {
-          fields: ["question", "answer" ],
-          media: {
-            fields: ["url", "alternativeText", "caption", "width", "height"],
-          },
-        },
+      faq: {
+        populate: true,
+      },
+      ddd: {
+        populate: true,
       },
       feature: {
         populate: {

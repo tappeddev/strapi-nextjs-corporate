@@ -2,23 +2,23 @@
   "collectionName": "components_sections_fa_qs",
   "info": {
     "displayName": "Faqs",
-    "icon": "crown",
+    "icon": "calendar",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "faq": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.faq",
-      "required": true
-    },
     "heading": {
       "type": "string",
       "required": true
     },
     "description": {
       "type": "string"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.faq",
+      "required": true
     }
   }
 }

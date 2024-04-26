@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_layout_documentssections",
+  "info": {
+    "displayName": "documentssection",
+    "icon": "cloud",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ddd": {
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.documents"
+    },
+    "desd": {
+      "type": "string"
+    }
+  }
+}

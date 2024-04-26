@@ -13,34 +13,14 @@ export interface ElementsFaq extends Schema.Component {
   };
 }
 
-export interface ElementsFeatureColumn extends Schema.Component {
-  collectionName: 'components_slices_feature_columns';
+export interface ElementsFaq2Entry extends Schema.Component {
+  collectionName: 'components_elements_faq2entries';
   info: {
-    name: 'FeatureColumn';
-    displayName: 'Feature column';
-    icon: 'align-center';
-    description: '';
+    displayName: 'Faq2entry';
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text;
-    icon: Attribute.Media & Attribute.Required;
-  };
-}
-
-export interface ElementsFeatureRow extends Schema.Component {
-  collectionName: 'components_slices_feature_rows';
-  info: {
-    name: 'FeatureRow';
-    displayName: 'Feature row';
-    icon: 'arrows-alt-h';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text;
-    media: Attribute.Media & Attribute.Required;
-    link: Attribute.Component<'links.link'>;
+    question: Attribute.String;
+    answer: Attribute.Text;
   };
 }
 
@@ -138,6 +118,32 @@ export interface ElementsTestimonial extends Schema.Component {
     picture: Attribute.Media & Attribute.Required;
     text: Attribute.Text & Attribute.Required;
     authorName: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface LayoutDocuments extends Schema.Component {
+  collectionName: 'components_layout_documents';
+  info: {
+    displayName: 'Documents';
+    icon: 'archive';
+    description: '';
+  };
+  attributes: {
+    file: Attribute.Media;
+    description: Attribute.String;
+  };
+}
+
+export interface LayoutDocumentssection extends Schema.Component {
+  collectionName: 'components_layout_documentssections';
+  info: {
+    displayName: 'documentssection';
+    icon: 'cloud';
+    description: '';
+  };
+  attributes: {
+    ddd: Attribute.Component<'layout.documents', true>;
+    desd: Attribute.String;
   };
 }
 
@@ -279,37 +285,26 @@ export interface SectionsFaQs extends Schema.Component {
   collectionName: 'components_sections_fa_qs';
   info: {
     displayName: 'Faqs';
-    icon: 'crown';
+    icon: 'calendar';
     description: '';
   };
   attributes: {
-    faq: Attribute.Component<'elements.faq', true> & Attribute.Required;
     heading: Attribute.String & Attribute.Required;
     description: Attribute.String;
+    faq: Attribute.Component<'elements.faq', true> & Attribute.Required;
   };
 }
 
-export interface SectionsFeatureColumnsGroup extends Schema.Component {
-  collectionName: 'components_slices_feature_columns_groups';
+export interface SectionsFaq2 extends Schema.Component {
+  collectionName: 'components_sections_faq2s';
   info: {
-    name: 'FeatureColumnsGroup';
-    displayName: 'Feature columns group';
-    icon: 'star-of-life';
+    displayName: 'Faq2';
+    description: '';
   };
   attributes: {
-    features: Attribute.Component<'elements.feature-column', true>;
-  };
-}
-
-export interface SectionsFeatureRowsGroup extends Schema.Component {
-  collectionName: 'components_slices_feature_rows_groups';
-  info: {
-    name: 'FeatureRowsGroup';
-    displayName: 'Feaures row group';
-    icon: 'bars';
-  };
-  attributes: {
-    features: Attribute.Component<'elements.feature-row', true>;
+    heading: Attribute.String;
+    description: Attribute.String;
+    List: Attribute.Component<'elements.faq2entry', true>;
   };
 }
 
@@ -505,14 +500,15 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'elements.faq': ElementsFaq;
-      'elements.feature-column': ElementsFeatureColumn;
-      'elements.feature-row': ElementsFeatureRow;
+      'elements.faq2entry': ElementsFaq2Entry;
       'elements.feature': ElementsFeature;
       'elements.footer-section': ElementsFooterSection;
       'elements.logos': ElementsLogos;
       'elements.notification-banner': ElementsNotificationBanner;
       'elements.plan': ElementsPlan;
       'elements.testimonial': ElementsTestimonial;
+      'layout.documents': LayoutDocuments;
+      'layout.documentssection': LayoutDocumentssection;
       'layout.footer': LayoutFooter;
       'layout.logo': LayoutLogo;
       'layout.navbar': LayoutNavbar;
@@ -523,8 +519,7 @@ declare module '@strapi/types' {
       'meta.metadata': MetaMetadata;
       'sections.bottom-actions': SectionsBottomActions;
       'sections.fa-qs': SectionsFaQs;
-      'sections.feature-columns-group': SectionsFeatureColumnsGroup;
-      'sections.feature-rows-group': SectionsFeatureRowsGroup;
+      'sections.faq2': SectionsFaq2;
       'sections.features': SectionsFeatures;
       'sections.heading': SectionsHeading;
       'sections.hero': SectionsHero;
