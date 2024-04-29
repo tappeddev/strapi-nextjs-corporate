@@ -17,16 +17,15 @@ const populate = {
       faq: {
         populate: true,
       },
+      
       ddd: {
-        imagedocuemt: {
-          populate: true,
+        populate: {
+          fields: ["description"],
+          imagedocuemt: {
+            populate: true,
+            // fields: ["url", "alternativeText", "caption", "width", "height"],
+          },
         },
-      },
-      imagedocuemt: {
-        populate: true,
-      },
-      testerd: {
-        populate: true,
       },
     
       feature: {
