@@ -8,7 +8,8 @@ const populate = {
   contentSections: {
     populate: {
       picture: {
-        fields: ["url", "alternativeText", "caption", "width", "height"],
+        // fields: ["url", "alternativeText", "caption", "width", "height"],
+        populate: true,
       },
       buttons: {
         populate: true,
@@ -17,8 +18,17 @@ const populate = {
         populate: true,
       },
       ddd: {
+        imagedocuemt: {
+          populate: true,
+        },
+      },
+      imagedocuemt: {
         populate: true,
       },
+      testerd: {
+        populate: true,
+      },
+    
       feature: {
         populate: {
           fields: ["title", "description", "showLink", "newTab", "url", "text"],
@@ -57,8 +67,9 @@ module.exports = (config, { strapi }) => {
       locale: ctx.query.locale,
     };
 
-    console.log("page-populate-middleware.js: ctx.query = ", ctx.query);
 
+
+    
     await next();
   };
 };

@@ -129,8 +129,8 @@ export interface LayoutDocuments extends Schema.Component {
     description: '';
   };
   attributes: {
-    file: Attribute.Media;
     description: Attribute.String;
+    imagedocuemt: Attribute.Media & Attribute.Required;
   };
 }
 
@@ -144,6 +144,7 @@ export interface LayoutDocumentssection extends Schema.Component {
   attributes: {
     ddd: Attribute.Component<'layout.documents', true>;
     desd: Attribute.String;
+    testerd: Attribute.Media;
   };
 }
 
