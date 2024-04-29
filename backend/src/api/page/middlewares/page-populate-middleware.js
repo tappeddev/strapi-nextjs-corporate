@@ -18,10 +18,10 @@ const populate = {
         populate: true,
       },
       
-      ddd: {
+      document: {
         populate: {
           fields: ["description"],
-          imagedocuemt: {
+          file: {
             populate: true,
             // fields: ["url", "alternativeText", "caption", "width", "height"],
           },

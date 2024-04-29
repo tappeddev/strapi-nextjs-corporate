@@ -8,9 +8,10 @@
   "options": {},
   "attributes": {
     "description": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "imagedocuemt": {
+    "file": {
       "type": "media",
       "multiple": false,
       "required": true,

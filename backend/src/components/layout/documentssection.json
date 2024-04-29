@@ -7,23 +7,15 @@
   },
   "options": {},
   "attributes": {
-    "ddd": {
+    "document": {
       "type": "component",
       "repeatable": true,
-      "component": "layout.documents"
+      "component": "layout.documents",
+      "required": true
     },
-    "desd": {
-      "type": "string"
-    },
-    "testerd": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
+    "header": {
+      "type": "string",
+      "required": true
     }
   }
 }

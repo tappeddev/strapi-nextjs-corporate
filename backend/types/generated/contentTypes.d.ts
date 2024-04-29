@@ -1062,7 +1062,6 @@ export interface ApiPagePage extends Schema.CollectionType {
         'sections.features',
         'sections.heading',
         'sections.fa-qs',
-        'sections.faq2',
         'layout.documentssection'
       ]
     > &

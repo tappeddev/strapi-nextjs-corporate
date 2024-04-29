@@ -9,18 +9,7 @@ export interface ElementsFaq extends Schema.Component {
   };
   attributes: {
     question: Attribute.String & Attribute.Required;
-    answer: Attribute.Blocks & Attribute.Required;
-  };
-}
-
-export interface ElementsFaq2Entry extends Schema.Component {
-  collectionName: 'components_elements_faq2entries';
-  info: {
-    displayName: 'Faq2entry';
-  };
-  attributes: {
-    question: Attribute.String;
-    answer: Attribute.Text;
+    answer: Attribute.Text & Attribute.Required;
   };
 }
 
@@ -129,8 +118,8 @@ export interface LayoutDocuments extends Schema.Component {
     description: '';
   };
   attributes: {
-    description: Attribute.String;
-    imagedocuemt: Attribute.Media & Attribute.Required;
+    description: Attribute.String & Attribute.Required;
+    file: Attribute.Media & Attribute.Required;
   };
 }
 
@@ -142,9 +131,9 @@ export interface LayoutDocumentssection extends Schema.Component {
     description: '';
   };
   attributes: {
-    ddd: Attribute.Component<'layout.documents', true>;
-    desd: Attribute.String;
-    testerd: Attribute.Media;
+    document: Attribute.Component<'layout.documents', true> &
+      Attribute.Required;
+    header: Attribute.String & Attribute.Required;
   };
 }
 
@@ -293,19 +282,6 @@ export interface SectionsFaQs extends Schema.Component {
     heading: Attribute.String & Attribute.Required;
     description: Attribute.String;
     faq: Attribute.Component<'elements.faq', true> & Attribute.Required;
-  };
-}
-
-export interface SectionsFaq2 extends Schema.Component {
-  collectionName: 'components_sections_faq2s';
-  info: {
-    displayName: 'Faq2';
-    description: '';
-  };
-  attributes: {
-    heading: Attribute.String;
-    description: Attribute.String;
-    List: Attribute.Component<'elements.faq2entry', true>;
   };
 }
 
@@ -501,7 +477,6 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'elements.faq': ElementsFaq;
-      'elements.faq2entry': ElementsFaq2Entry;
       'elements.feature': ElementsFeature;
       'elements.footer-section': ElementsFooterSection;
       'elements.logos': ElementsLogos;
@@ -520,7 +495,6 @@ declare module '@strapi/types' {
       'meta.metadata': MetaMetadata;
       'sections.bottom-actions': SectionsBottomActions;
       'sections.fa-qs': SectionsFaQs;
-      'sections.faq2': SectionsFaq2;
       'sections.features': SectionsFeatures;
       'sections.heading': SectionsHeading;
       'sections.hero': SectionsHero;
