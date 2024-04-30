@@ -14,7 +14,7 @@ export function sectionRenderer(section: any, index: number) {
     case "sections.features":
       return <Features key={index} data={section} />;
     case "sections.fa-qs":
-      return <Faqs key={index} data={section}> </Faqs>;
+      return <Faqs key={index} data={section} />;
     case "layout.documentssection":
       return <Downloads key={index} data={section} />;
     case "sections.testimonials-group":
